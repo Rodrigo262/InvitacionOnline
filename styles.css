@@ -1,114 +1,169 @@
-/* Importar las fuentes desde Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Luxurious+Script&family=Licorice&family=JejuMyeongjo&family=Gafata&display=swap');
-
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-    font-family: 'Gafata', sans-serif;
+:root {
+  --main-color: #a77a4e; /* color dorado/marrón suave */
+  --bg-light: #f8f7f5;
+  --font-main: 'Georgia', serif;
 }
 
-.welcome {
-    position: relative;
-    width: 100vw; /* Asegura que el ancho sea el del viewport */
-    height: 100vh; /* Asegura que la altura sea la del viewport */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg-light);
+  color: #333;
+  line-height: 1.6;
 }
 
-.background-image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: url('assets/img/portada.jpg') no-repeat center center/cover;
+/* Portada */
+.hero {
+  background: url('assets/img/portada.jpg') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding-bottom: 3rem;
+
 }
 
-.background-image::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Negro con 30% de opacidad; ajusta según necesidad */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.overlay {
+  position: relative;
+  color: #fff;
+  z-index: 99999;
+}
+
+.subtitle {
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.names {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
 }
 
 .date {
-    position: absolute;
-    width: 80%; /* Ajustar el ancho para la pantalla móvil */
-    left: 50%; /* Centrando horizontalmente */
-    transform: translateX(-50%); /* Ajusta el texto horizontalmente al centro */
-    bottom: 5%; /* Ajustar la posición vertical desde el fondo */
-    font-family: 'Gafata', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 6vw;
-    line-height: 27px;
-    text-align: center;
-    color: #FFFFFF;
+  font-size: 1.2rem;
 }
 
-.nos-casamos {
-    position: absolute;
-    width: 80%; /* Ajustar el ancho para la pantalla móvil */
-    left: 50%; /* Centrando horizontalmente */
-    transform: translateX(-50%); /* Ajusta el texto horizontalmente al centro */
-    top: 10%; /* Ajustar la posición vertical desde el fondo */
-    font-family: 'JejuMyeongjo', serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 8vw;
-    line-height: 32px;
-    color: #FFFFFF;
-    text-align: center;
+/* Detalles */
+.details {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 1rem;
 }
 
-.nombres {
-    position: absolute;
-    width: 90%; /* Ajustar el ancho para la pantalla móvil */
-    top: 73%; /* Ajustar la posición vertical */
-    display: flex;
-    flex-direction: column;
+.block {
+  background: #fff;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.nombre-rodrigo,
-.nombre-isabel {
-    position: relative;
-    font-family: 'Luxurious Script', cursive;
-    font-style: normal;
-    font-weight: 400;
-    color: #FFFFFF;
-    font-size: 10vw; /* Tamaño relativo al viewport */
-    line-height: 0.8em; /* Ajuste de altura de línea */
-}
-.nombre-rodrigo{
-    left: 10%;
+.block h2 {
+  letter-spacing: 3px;
+  margin-bottom: .5rem;
 }
 
-.nombre-rodrigo::first-letter,
-.nombre-isabel::first-letter {
-    font-size: 26vw; /* Tamaño grande para la primera letra */
+.block .hour {
+  color: var(--main-color);
+  font-style: italic;
+  margin-bottom: 1rem;
 }
 
-.y {
-    font-family: 'Licorice', cursive;
-    font-style: normal;
-    position: relative;
-    font-weight: 400;
-    font-size: 10vw; /* Tamaño relativo al viewport */
-    line-height: 1em; /* Ajuste de altura de línea */
-    color: #FFFFFF;
-    left: 55%;
-    margin: 0; /* Asegura que no haya margen extra */
+.btn {
+  display: inline-block;
+  background: var(--main-color);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background 0.3s;
 }
 
-.nombre-isabel {
-    left: 60%;/* Espacio adicional entre el símbolo & y el nombre Isabel */
+.btn:hover {
+  background: #8c6239;
 }
 
-@media screen and (max-width: 1368px) {
-    .nombres {
-        top: 65%; /* Ajusta aún más la posición vertical en pantallas muy pequeñas */
-    }
+/* RSVP */
+.rsvp {
+  background: #e6e1d9;
+  padding: 3rem 1rem;
+}
+
+.rsvp h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  flex-direction: column;
+  text-align: left;
+  gap: 1rem;
+}
+
+.radio-label {
+  display: flex;             
+  align-items: center;    
+  font-size: 1rem;
+  margin-left: 1rem;
+  cursor: pointer;  
+  text-align: left;
+}
+
+.radio-button {
+  accent-color: var(--main-color);
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.grid-2 input {
+  width: 100%; 
+  box-sizing: border-box;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem; 
+}
+
+select, textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+button.btn {
+  cursor: pointer;
+  border: none;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #fff;
+  font-size: 0.9rem;
+}
+
+/* Responsivo */
+@media (max-width: 300px) {
+  .names { font-size: 2rem; }
+  .grid-2 { grid-template-columns: 1fr; }
 }

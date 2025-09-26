@@ -1,30 +1,146 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación de Boda</title>
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Boda Rodrigo & Isabel</title>
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Licorice&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Licorice&family=Luxurious+Script&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Gafata&family=Licorice&family=Luxurious+Script&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Licorice&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Licorice&family=Luxurious+Script&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Gafata&family=Licorice&family=Luxurious+Script&display=swap");
     </style>
-    
-</head>
-<body>
-    <div class="welcome">
-        <div class="background-image"></div> 
-        <div class="nos-casamos">NOS CASAMOS</div>
-        <div class="nombres">
-            <div class="nombre-rodrigo">Rodrigo</div>
-            <div class="y">&</div>
-            <div class="nombre-isabel">Isabel</div>
-        </div>
-        <div class="date">XX de  Xxxxx de 202X</div>
-    </div>
-</body>
-</html>
+  </head>
+  <body>
+    <!-- Sección Portada -->
+    <header class="hero">
+      <div class="overlay">
+        <p class="subtitle">Nos casamos</p>
+        <h1 class="names">Rodrigo & Isabel</h1>
+        <p class="date">Sábado, 24 de octubre de 2026</p>
+      </div>
+    </header>
 
-<!-- https://www.figma.com/design/RwnavpJ597BIubNKyHliEn/Invitaci%C3%B3n-Online?node-id=0-1&t=pUYFWK9bXF0hYByi-0 -->
-<!-- https://fonts.google.com/selection/embed -->
+    <!-- Detalles de ceremonia y celebración -->
+    <section class="details">
+      <div class="block">
+        <h2>La Ceremonia</h2>
+        <p class="hour">12:30 h</p>
+        <p>
+          Santuario Stmo. Cristo de Villajos <br />Ctra. CM-3105, 13610 Campo de
+          Criptana, C. Real
+        </p>
+        <a
+          href="https://maps.app.goo.gl/ZjBQQ4sEcniFfDgn8"
+          class="btn"
+          style="margin-top: 1rem"
+          >Ver ubicación</a
+        >
+      </div>
+      <div class="block">
+        <h2>Celebración</h2>
+        <p class="hour">14:30 h</p>
+        <p>
+          Hotel Chateâu Viñasoro<br />CM-3107, 13600 Alcázar de San Juan, C.
+          Real
+        </p>
+        <a
+          href="https://maps.app.goo.gl/b9MywhUukarvSQVs6"
+          class="btn"
+          style="margin-top: 1rem"
+          >Ver ubicación</a
+        >
+      </div>
+    </section>
+
+    <!-- Confirmación de asistencia -->
+    <section class="rsvp">
+      <h2>¿Nos confirmáis asistencia?</h2>
+      <form id="rsvpForm">
+        <div style="margin-bottom: 1rem">
+          <div style="display: flex; align-items: center">
+            <input
+              style="width: auto"
+              type="radio"
+              class="radio-button"
+              name="asistencia"
+              value="si"
+              required
+            />
+            <label class="radio-label"> Claro que sí, gracias!</label>
+          </div>
+
+          <div
+            style="display: flex; align-items: center; justify-items: center"
+          >
+            <input
+              style="width: auto"
+              type="radio"
+              class="radio-button"
+              name="asistencia"
+              value="no"
+            />
+            <label class="radio-label"> Lo siento, no podemos asistir</label>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <input
+            type="text"
+            name="nombre"
+            placeholder="Nombre"
+            required
+          />
+        </div>
+        <div class="grid-2">
+          <input
+            type="number"
+            name="invitados"
+            placeholder="Nº de invitados"
+            required
+          />
+          <input
+            type="tel"
+            name="telefono"
+            placeholder="Teléfono"
+            required
+          />
+        </div>
+        <div class="grid-2">
+          <select name="bus">
+            <option value="">¿Quiero bus?</option>
+            <option value="sí">Sí</option>
+            <option value="no">No</option>
+          </select>
+          <input
+            type="number"
+            name="plazas"
+            placeholder="Plazas bus"
+          />
+        </div>
+        <textarea
+          name="notas"
+          placeholder="Intolerancias, sugerencias…"
+        ></textarea>
+        <button
+          type="submit"
+          class="btn"
+        >
+          Enviar
+        </button>
+      </form>
+    </section>
+
+    <footer>
+      <p>¡Gracias por acompañarnos en este día especial!</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
